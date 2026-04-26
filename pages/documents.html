@@ -159,11 +159,24 @@
     </footer>
 
     <script>
+        // Initialize mobile nav state
+        function initMobileNav() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (window.innerWidth <= 768) {
+                nav.classList.add('mobile-hidden');
+            } else {
+                nav.classList.remove('mobile-hidden');
+            }
+        }
+
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
             const nav = document.querySelector('nav');
             hamburger.classList.toggle('active');
             nav.classList.toggle('active');
+            nav.classList.toggle('mobile-hidden');
         }
 
         // Close menu when a link is clicked
@@ -171,18 +184,30 @@
             link.addEventListener('click', () => {
                 document.querySelector('.hamburger').classList.remove('active');
                 document.querySelector('nav').classList.remove('active');
+                document.querySelector('nav').classList.add('mobile-hidden');
             });
         });
+
+        // Initialize on page load and on resize
+        window.addEventListener('load', initMobileNav);
+        window.addEventListener('resize', initMobileNav);
     </script>
 
     <script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const arrow = button.querySelector('.accordion-arrow');
+            
+            // Close other open items
+            const allItems = document.querySelectorAll('.accordion-item');
             allItems.forEach(el => {
                 if (el !== item && el.classList.contains('active')) {
                     el.classList.remove('active');
                     el.querySelector('.accordion-arrow').style.transform = 'rotate(0deg)';
                 }
             });
-
+            
             // Toggle current item
             item.classList.toggle('active');
             arrow.style.transform = item.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';

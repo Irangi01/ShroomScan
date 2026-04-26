@@ -127,11 +127,24 @@
     </footer>
 
     <script>
+        // Initialize mobile nav state
+        function initMobileNav() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (window.innerWidth <= 768) {
+                nav.classList.add('mobile-hidden');
+            } else {
+                nav.classList.remove('mobile-hidden');
+            }
+        }
+
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
             const nav = document.querySelector('nav');
             hamburger.classList.toggle('active');
             nav.classList.toggle('active');
+            nav.classList.toggle('mobile-hidden');
         }
 
         // Close menu when a link is clicked
@@ -139,8 +152,13 @@
             link.addEventListener('click', () => {
                 document.querySelector('.hamburger').classList.remove('active');
                 document.querySelector('nav').classList.remove('active');
+                document.querySelector('nav').classList.add('mobile-hidden');
             });
         });
+
+        // Initialize on page load and on resize
+        window.addEventListener('load', initMobileNav);
+        window.addEventListener('resize', initMobileNav);
     </script>
 </body>
 
