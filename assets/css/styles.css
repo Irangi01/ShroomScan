@@ -189,6 +189,34 @@ nav a:hover::before {
     width: 100%;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* ===============================
    Hero Section
    =============================== */
@@ -930,9 +958,48 @@ main {
         font-size: 16px;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #8a6a48 0%, #6b5540 100%);
+        padding: 20px 0;
+        border-top: 2px solid #c8b296;
+    }
+
+    nav.active {
+        display: block;
+    }
+
     nav ul {
-        gap: 15px;
-        font-size: 14px;
+        flex-direction: column;
+        gap: 0;
+        padding: 0 20px;
+    }
+
+    nav li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(200, 178, 150, 0.2);
+    }
+
+    nav li:last-child {
+        border-bottom: none;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 0;
+        display: block;
+    }
+
+    .header-container {
+        padding: 0 20px;
     }
 
     .page-title {
@@ -943,6 +1010,17 @@ main {
     .slides-grid,
     .team-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet media query */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        display: block !important;
     }
 }
 

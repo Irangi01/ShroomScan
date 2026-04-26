@@ -27,6 +27,11 @@
                     <li><a href="contact.html">Contact us</a></li>
                 </ul>
             </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -154,13 +159,23 @@
     </footer>
 
     <script>
-        function toggleAccordion(button) {
-            const item = button.parentElement;
-            const content = item.querySelector('.accordion-content');
-            const arrow = button.querySelector('.accordion-arrow');
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
 
-            // Close other open items
-            const allItems = document.querySelectorAll('.accordion-item');
+        // Close menu when a link is clicked
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+    </script>
+
+    <script>
             allItems.forEach(el => {
                 if (el !== item && el.classList.contains('active')) {
                     el.classList.remove('active');
