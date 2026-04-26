@@ -1025,6 +1025,24 @@ main {
     .slides-grid,
     .team-grid {
         grid-template-columns: 1fr;
+        gap: 15px !important;
+    }
+
+    .slide-card:last-child {
+        grid-column: auto;
+    }
+
+    .slide-info {
+        padding: 15px;
+    }
+
+    .slide-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .slide-preview {
+        height: 150px;
     }
 }
 
@@ -1042,6 +1060,11 @@ main {
 @media (min-width: 769px) and (max-width: 1023px) {
     .slides-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .slide-card:last-child {
+        grid-column: auto;
     }
 }
 
