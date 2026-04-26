@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documents - ShroomScan Research</title>
+    <title>Documents - ShroomScan</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
 <body>
     <!-- ================== Header & Navigation ================== -->
     <header>
@@ -28,144 +30,118 @@
         </div>
     </header>
 
-    <!-- ================== Hero Section ================== -->
-    <section class="hero">
-        <div class="hero-container">
-            <h1>Project Documents</h1>
-            <p>Access all project documentation, reports, and technical materials</p>
-        </div>
-    </section>
 
     <!-- ================== Main Content ================== -->
     <main>
-        <!-- Core Documents -->
         <section class="section">
-            <h2 class="page-title">Core Documentation</h2>
-            <ul class="document-list">
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">📄 Project Charter</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Foundational document defining project scope, objectives, and stakeholders</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">📋 Proposal Document</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Comprehensive project proposal including research methodology and expected outcomes</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-            </ul>
-        </section>
+            <h2 class="page-title">Project Documents</h2>
 
-        <!-- Status & Progress Documents -->
-        <section class="section">
-            <h2 class="page-title">Status Documents</h2>
-            <ul class="document-list">
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">📊 Status Document - 1</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">First progress report (May 2023) - Initial development and prototyping phase</p>
+            <!-- Document Accordion -->
+            <div class="document-accordion">
+                <!-- Planning Documents -->
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">
+                        <span class="accordion-title">Project Charter</span>
+                        <span class="accordion-arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="document-entry">
+                            <span class="document-code">25-26J-264</span>
+                            <a href="../assets/documents/Project_Charter.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
                     </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">📊 Status Document - 2</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Second progress report (September 2023) - System completion and testing phase</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Checklists & Guidelines -->
-        <section class="section">
-            <h2 class="page-title">Checklists & Guidelines</h2>
-            <ul class="document-list">
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">✅ Project Quality Checklist</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Code quality, documentation, and testing standards compliance checklist</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">✅ Database Design Checklist</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Database schema, indexing, and optimization verification checklist</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">✅ Testing & Deployment Checklist</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Unit testing, integration testing, and deployment verification checklist</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Final Reports -->
-        <section class="section">
-            <h2 class="page-title">Final Reports & Deliverables</h2>
-            <ul class="document-list">
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">📑 Final Project Report</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Comprehensive final report including research findings, implementation details, and conclusions</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">🔧 System Architecture Document</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Detailed system design, architecture diagrams, and technical specifications</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">📚 User Manual & Documentation</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Complete user guide and technical documentation for system deployment and usage</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-                <li class="document-item">
-                    <div>
-                        <div class="document-name">🧪 Testing & Results Report</div>
-                        <p style="color: #999; font-size: 14px; margin-top: 5px;">Comprehensive testing procedures, results, and performance analysis report</p>
-                    </div>
-                    <a href="#" class="document-link">View/Download</a>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Document Categories -->
-        <section class="section">
-            <h2 class="page-title">Document Categories</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">📋</div>
-                    <h3>Planning Documents</h3>
-                    <p>Project charter, proposal, and planning documentation that outline project scope and objectives.</p>
                 </div>
-                <div class="card">
-                    <div class="card-icon">📊</div>
-                    <h3>Progress Reports</h3>
-                    <p>Status documents and progress reports detailing project advancement and milestones achieved.</p>
+
+                <!-- Proposal Document -->
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">
+                        <span class="accordion-title">TAF Document</span>
+                        <span class="accordion-arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="document-entry">
+                            <span class="document-code">25-26J-264</span>
+                            <a href="../assets/documents/TAF_Document.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">🔧</div>
-                    <h3>Technical Documentation</h3>
-                    <p>System design, architecture, and technical specifications for implementation and deployment.</p>
+
+                <!-- Status Documents -->
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">
+                        <span class="accordion-title">Proposal Report Draft</span>
+                        <span class="accordion-arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="document-entry">
+                            <span class="document-code">IT22063182</span>
+                            <a href="../assets/documents/Report_Draft_IT22063182.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">IT22062888</span>
+                            <a href="../assets/documents/Report_Draft_IT22062888.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">IT22586384</span>
+                            <a href="../assets/documents/Report_Draft_IT22586384.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">IT22290960</span>
+                            <a href="../assets/documents/Report_Draft_IT22290960.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-icon">✅</div>
-                    <h3>Quality Assurance</h3>
-                    <p>Checklists and testing reports ensuring project quality and compliance standards.</p>
+
+                <!-- Final Reports -->
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">
+                        <span class="accordion-title">Final Reports</span>
+                        <span class="accordion-arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="document-entry">
+                            <span class="document-code">IT22063182</span>
+                            <a href="../assets/documents/Final_Report_IT22063182.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">IT22062888</span>
+                            <a href="../assets/documents/Final_Report_IT22062888.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">IT22586384</span>
+                            <a href="../assets/documents/Final_Report_IT22586384.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">IT22290960</span>
+                            <a href="../assets/documents/Final_Report_IT22290960.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                        <div class="document-entry">
+                            <span class="document-code">Group - 264</span>
+                            <a href="../assets/documents/Final_Report_Group_264.pdf" class="download-btn" download>
+                                <span>⬇</span> Download
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -173,8 +149,30 @@
 
     <!-- ================== Footer ================== -->
     <footer>
-        <p>&copy; 2024 ShroomScan Research Project. All rights reserved.</p>
+        <p>&copy; 2025 Smart Mushroom Incubation System Research Project. All rights reserved.</p>
         <p>Faculty of Computing | SLIIT</p>
     </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const arrow = button.querySelector('.accordion-arrow');
+
+            // Close other open items
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(el => {
+                if (el !== item && el.classList.contains('active')) {
+                    el.classList.remove('active');
+                    el.querySelector('.accordion-arrow').style.transform = 'rotate(0deg)';
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+            arrow.style.transform = item.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    </script>
 </body>
+
 </html>

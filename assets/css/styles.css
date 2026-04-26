@@ -276,12 +276,12 @@ nav a:hover::before {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 3px solid #c8b296;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 14px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 10px 40px rgba(0, 0, 0, 0.7);
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .btn::before {
@@ -589,9 +589,12 @@ main {
 
 .slides-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .slide-card {
@@ -603,6 +606,10 @@ main {
     animation: fadeInUp 0.6s ease;
 }
 
+.slide-card:last-child {
+    grid-column: 2 / 3;
+}
+
 .slide-preview {
     background: linear-gradient(135deg, #c8b296 0%, #8a6a48 100%);
     height: 200px;
@@ -610,10 +617,12 @@ main {
     align-items: center;
     justify-content: center;
     font-size: 60px;
-    color: white;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
+    
 
 .slide-preview::before {
     content: '';
@@ -731,6 +740,8 @@ main {
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    object-fit: cover;
+    border: 3px solid #c8b296;
 }
 
 .team-member:hover .member-avatar {
@@ -768,45 +779,80 @@ main {
    =============================== */
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-info {
     background: white;
-    padding: 30px;
+    padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     animation: fadeInLeft 0.6s ease;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    border: 2px solid #f0f0f0;
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.714);
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.contact-info > * {
+    position: relative;
+    z-index: 1;
 }
 
 .contact-info h3 {
     color: #8a6a48;
     font-size: 22px;
     margin-bottom: 20px;
-    font-weight: 600;
+    font-weight: 700;
+}
+
+.contact-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .contact-item {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-    padding-left: 10px;
+    padding-left: 8px;
 }
 
 .contact-label {
     color: #8a6a48;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
 .contact-detail {
     color: #666;
     transition: color 0.3s ease;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .contact-item:hover .contact-detail {
@@ -814,7 +860,7 @@ main {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     animation: fadeInRight 0.6s ease;
 }
 
@@ -823,18 +869,20 @@ main {
     color: #8a6a48;
     font-weight: 600;
     margin-bottom: 8px;
+    font-size: 15px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px 16px;
     border: 2px solid #e0e0e0;
-    border-radius: 6px;
+    border-radius: 8px;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 15px;
     transition: all 0.3s ease;
     background-color: #fafafa;
+    line-height: 1.5;
 }
 
 .form-group input:focus,
@@ -847,11 +895,15 @@ main {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 150px;
+    min-height: 130px;
 }
 
 @media (max-width: 768px) {
     .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-items-wrapper {
         grid-template-columns: 1fr;
     }
 
@@ -891,6 +943,12 @@ main {
     .slides-grid,
     .team-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .slides-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -968,4 +1026,259 @@ footer a:hover {
 
 .mb-40 {
     margin-bottom: 40px;
+}
+
+/* ===============================
+   Document Accordion Styles
+   =============================== */
+
+.document-accordion {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #8a6a48 0%, #6b5540 100%);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(138, 106, 72, 0.3);
+}
+
+.accordion-button:hover {
+    background: linear-gradient(135deg, #6b5540 0%, #5a4634 100%);
+    box-shadow: 0 6px 16px rgba(138, 106, 72, 0.4);
+    transform: translateY(-2px);
+}
+
+.accordion-title {
+    flex: 1;
+    text-align: left;
+}
+
+.accordion-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: white;
+    border-left: 3px solid #8a6a48;
+    margin-left: 15px;
+    margin-top: 2px;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 20px 30px;
+}
+
+.document-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.document-entry:last-child {
+    border-bottom: none;
+}
+
+.document-code {
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: white;
+    border: 2px solid #8a6a48;
+    border-radius: 25px;
+    color: #8a6a48;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #8a6a48;
+    color: white;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .accordion-button {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 15px 20px;
+    }
+    
+    .download-btn {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+}
+
+/* ===============================
+   Document Upload Styles
+   =============================== */
+
+.upload-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.upload-section h3 {
+    color: #8a6a48;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.upload-area {
+    border: 2px dashed #c8b296;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #8a6a48;
+    background-color: #f0e9dd;
+}
+
+.upload-area svg {
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.upload-area p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.uploaded-files-list {
+    margin-top: 30px;
+}
+
+.uploaded-list h4 {
+    color: #8a6a48;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c8b296;
+}
+
+.uploaded-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #f9f7f4;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 4px solid #8a6a48;
+}
+
+.file-info {
+    flex: 1;
+}
+
+.file-name {
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    word-break: break-word;
+}
+
+.file-meta {
+    color: #999;
+    font-size: 13px;
+    margin: 5px 0 0 0;
+}
+
+.file-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.delete-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    background: #ff4444;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .upload-section {
+        padding: 20px;
+    }
+    
+    .upload-area {
+        padding: 25px 15px;
+    }
+    
+    .uploaded-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .file-actions {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    
+    .file-actions button {
+        flex: 1;
+    }
 }
